@@ -24,4 +24,12 @@ public class ContatoTest {
 		cdao.inserir(contato);
 		assertTrue("O contato não foi adicionado.", cdao.existe(contato));
 	}
+	
+	@Test
+	public void testAndressa() {
+		int tamanhoanterior = cdao.lerTodos().size();
+		cdao.inserir(contato);
+		assertTrue("O contato não foi adicionado.", tamanhoanterior<=cdao.lerTodos().size());
+	}
 }
+
